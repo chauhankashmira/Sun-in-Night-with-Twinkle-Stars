@@ -1,0 +1,86 @@
+/* Set up the body with a dark background */
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container for the sky */
+.sky {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Style for individual stars */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+/* Twinkling animation */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.sun-container {
+    position:static;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .sun {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #FFD700, #FFA500);
+    border-radius: 50%;
+    box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.8);
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 1s infinite;
+  }
+  
+  .rays {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.5) 50%, transparent 60%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 5s linear infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.8);
+    }
+    50% {
+      box-shadow: 0 0 30px 20px rgba(255, 215, 0, 1);
+    }
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
